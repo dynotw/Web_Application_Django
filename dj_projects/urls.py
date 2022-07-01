@@ -12,8 +12,9 @@ urlpatterns = [
     # Home
     # 1.URL; 2.View function (from views.py); 3.Template (index.html)
     path('', views.index, name='index'),
-
     # Page which shows all topics
-    path('topics/', views.topics, name='topics')
+    path('topics/', views.topics, name='topics'),
+    # Page which shows an individual topic
+    path('topics/<int:topic_id>/', views.topic, name='topic'),
 ]
 
