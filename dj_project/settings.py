@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Add my own app
     'dj_projects',
+    'users'
 ]
 
 MIDDLEWARE = [
