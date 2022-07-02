@@ -1,0 +1,13 @@
+{% extends "dj_projects/base.html" %}
+{% block content %}
+<p>
+    <a href="{% url 'dj_projects:topic' topic.id %}">{{topic}}</a>
+</p>
+<p>Edit Entry: </p>
+<p>{{entry.text|linebreaks}}</p>
+<form action="{% url 'dj_projects:edit_entry' entry.id %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button name="submit">Save Changes</button>
+</form>
+{% endblock content %}
