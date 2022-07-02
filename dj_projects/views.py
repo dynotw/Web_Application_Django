@@ -50,9 +50,11 @@ def new_entry(request, topic_id):
         # POST data submitted, then process data
         form = EntryForm(data=request.POST)
         if form.is_valid():
+            print("Hello")
             new_entry = form.save(commit=False)
             new_entry.topic = topic
             new_entry.save()
             return redirect('dj_projects:topic', topic_id=topic_id)
+    # No data submitted or invalid form
     context = {'topic': topic, 'form': form}
     return render(request, 'dj_projects/new_entry.html', context)

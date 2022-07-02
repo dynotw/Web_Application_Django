@@ -2,7 +2,7 @@
 {% block content %}
 <p><a href="{% url 'dj_projects:topic' topic.id %}">{{ topic }}</a></p>
 <p>Add a new entry:</p>
-<form action="{% url 'dj_projects:new_entry' topic.id %}" method=""POST>
+<form action="{% url 'dj_projects:new_entry' topic.id %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <button name="'submit">Add Entry</button>
