@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Topic
-from .forms import TopicForm
+from .forms import TopicForm, EntryForm
 
 # Create your views here.
 def index(request):
@@ -32,11 +32,27 @@ def new_topic(request):
         form = TopicForm()
     else:
         # POST data submitted , then process data
-        form = TopicForm(data = request.POST)
+        form = TopicForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect('dj_projects:topics')
-
     context = {'form': form}
     return render(request, 'dj_projects/new_topic.html', context)
 
+# Views function for Page which adds new entry for topic_id
+def new_entry(request, topic_id):
+    """Add a new entry for a topic with topic_id"""
+    topic = Topic.objects.get(id=topic_id)
+    if request.method != "POST":
+        """No data submitted, then create a blank"""
+        form = EntryForm()
+    else:
+        # POST data submitted, then process data
+        form = EntryForm(data=request.POST)
+        if form.is_valid():
+            new_entry = form.save(commit=False)
+            new_entry.topic = topic
+            new_entry.save()
+            return redirect('dj_projects:topic', topic_id=topic_id)
+    context = {'topic': topic, 'form': form}
+    return render(request, 'dj_projects/new_entry.html', context)

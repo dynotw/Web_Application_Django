@@ -2,6 +2,7 @@
 {% block content %}
 <p>Topics:{{topic}}</p>
 <p>Entries</p>
+<p><a href="{% url 'dj_projects:new_entry' topic.id %}">ADD NEW ENTRY</a></p>
 <ul>
     {% for entry in entries %}
     <li>
