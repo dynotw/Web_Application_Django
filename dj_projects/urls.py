@@ -16,5 +16,7 @@ urlpatterns = [
     path('topics/', views.topics, name='topics'),
     # Page which shows an individual topic
     path('topics/<int:topic_id>/', views.topic, name='topic'),
+    # Page for adding a new topic, not in admin page
+    path('new_topic/', views.new_topic, name='new_topic'),
 ]
 
