@@ -1,0 +1,12 @@
+Here's a list of questions which I met
+
+1. Django logged_out.html page problem that redirect administration pages, which means that logged_out.html not overriding in django registration?
+
+A: See Herve answer, this guy explains so detailed
+https://code.djangoproject.com/ticket/20186
+
+
+2. How to reset migration?
+
+A: See this website
+https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html
