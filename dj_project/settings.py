@@ -31,11 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # Add my own app
+    # Add my own App
     'dj_projects',
     'users',
 
-
+    # Third Party App
+    'bootstrap4'
+    
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
