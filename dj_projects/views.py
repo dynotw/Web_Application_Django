@@ -64,6 +64,8 @@ def new_entry(request, topic_id):
             print("Hello")
             new_entry = form.save(commit=False)
             new_entry.topic = topic
+            if new_entry.topic.owner != request.user:
+                raise Http404
             new_entry.save()
             return redirect('dj_projects:topic', topic_id=topic_id)
     # No data submitted or invalid form
