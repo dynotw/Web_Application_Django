@@ -1,0 +1,21 @@
+<!--
+{% extends "dj_projects/base.html" %}
+{% block content %}
+<p>Topics:{{topic}}</p>
+<p>Entries</p>
+<p><a href="{% url 'dj_projects:new_entry' topic.id %}">ADD NEW ENTRY</a></p>
+<ul>
+    {% for entry in entries %}
+    <li>
+        <p>{{ entry.date_added|date:'M d, Y H:i'}}</p>
+        <p>{{ entry.text|linebreaks}}</p>
+        <p><a href="{% url 'dj_projects:edit_entry' entry.id %}">Edit Entry</a></p>
+    </li>
+    {% empty %}
+    <li>
+        There are no entries for this topic yet.
+    </li>{% endfor %}
+</ul>
+{% endblock content %}
+-->
+

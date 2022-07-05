@@ -1,0 +1,21 @@
+
+{% comment %}
+<!-- Because we use Django template, I need to wrtite {% comment %}{% endcomment %}, "<!- -    - ->" is not enough -->
+<!-- This is the old version of base.html, which doesn't use Boostrap from django.bootstrap4
+<p>
+    <a href="{% url 'dj_projects:index'%}">Dj_Projects</a>
+    <a href="{% url 'dj_projects:topics' %}">Topics</a>
+    {% if user.is_authenticated %}
+    <p></p>
+    Hello, {{user.username}}
+    <a href="{% url 'users:logout' %}">Log Out</a>
+    {% else %}
+    <a href="{% url 'users:register' %}">Register</a>
+    <a href="{% url 'users:login' %}">Log In</a>
+    {% endif %}
+</p>
+
+{% block content %}
+{% endblock content %}
+-->
+{% endcomment %}
